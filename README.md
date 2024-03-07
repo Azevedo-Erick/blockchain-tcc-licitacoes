@@ -28,8 +28,7 @@
 ```mermaid
     graph TD
     subgraph frontend
-        AP[Angular App]
-        AC[Controller] --> AS[Angular Services] -.->  AR[Angular Repository]
+        AP[Angular App] --> AC[Controller] --> AS[Angular Services] -.->  AR[Angular Repository]
     end
 
     subgraph backend
@@ -42,7 +41,7 @@
 
     subgraph blockchain
     SC[Smart Contracts]
-    BC[Hyperleger Fabric]
+    BC[Hyperleger Besu]
     end
 
     subgraph storage
