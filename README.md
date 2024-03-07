@@ -71,6 +71,18 @@
 
 ### DIAGRAMAS DE SEQUENCIA
 
+#### BUSCA DE LICITAÇÃO
+```mermaid
+sequenceDiagram
+    Frontend->>+Backend: Requisição no endpoint de consulta
+    Backend-->>+Blockchain: Busca o bloco com o hash da licitação
+    Blockchain-->>-Backend: Retorna dados do bloco
+    Backend->>+DB: Busca os dados de licitante e dados dos candidatos 
+    DB->>-Backend: Retorna os solicitados dados 
+    Backend-->>+IPFS: Busca arquivos da licitação
+    IPFS-->>-Backend: Retorna hashes dos arquivos
+    Backend->>-Frontend: Resposta do endpoint
+```
 #### CADASTRO DE LICITAÇÃO
 ```mermaid
 sequenceDiagram
