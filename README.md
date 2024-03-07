@@ -70,6 +70,21 @@
 ```
 
 ### DIAGRAMAS DE SEQUENCIA
+
+#### CADASTRO DE LICITAÇÃO
+```mermaid
+sequenceDiagram
+    Frontend->>+Backend: Requisição no endpoint de criação
+    Backend->>Backend: Verifica os dados
+    Backend-->>+IPFS: Adiciona arquivos
+    IPFS-->>-Backend: Retorna hashes dos arquivos
+    Backend->>+DB: Cadastra dados
+    DB->>-Backend: Retorna dados cadastrados
+    Backend-->>+Blockchain: Registra a licitação
+    Blockchain-->>-Backend: Retorna dados do bloco
+    Backend->>-Frontend: Requisição no endpoint de criação
+```
+
 #### EDIÇÃO DE LICITAÇÃO
 ```mermaid
 sequenceDiagram
